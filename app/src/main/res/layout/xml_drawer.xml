@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="@color/gray_100"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/slide_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawer_background"
+        tools:context=".home.presentation.MainActivity">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/d_300"
+            android:layout_marginStart="@dimen/d_16"
+            android:layout_marginTop="@dimen/d_60"
+            android:background="@drawable/bg_toolbar_background"
+            android:backgroundTint="@color/gray_50"
+            android:padding="@dimen/d_12"
+            android:src="@drawable/ic_menu"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivUserPhoto"
+            android:layout_width="@dimen/d_80"
+            android:layout_height="@dimen/d_80"
+            android:layout_marginStart="@dimen/d_20"
+            android:layout_marginTop="@dimen/d_50"
+            android:elevation="5dp"
+            android:src="@drawable/profile"
+            app:civ_border_color="@color/gray_50"
+            app:civ_border_width="@dimen/d_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvWelcome"
+            style="@style/lato_normal_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/d_20"
+            android:layout_marginTop="@dimen/d_5"
+            android:layout_marginBottom="@dimen/d_30"
+            android:text="@string/welcome"
+            android:textColor="@color/gray_600"
+            android:textSize="@dimen/text_16"
+            app:layout_constraintBottom_toBottomOf="@+id/ivUserPhoto"
+            app:layout_constraintStart_toEndOf="@id/ivUserPhoto"
+            app:layout_constraintTop_toTopOf="@+id/ivUserPhoto" />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            style="@style/lato_normal_16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d_5"
+            android:layout_marginBottom="@dimen/d_7"
+            android:text="@string/user_name"
+            android:textColor="@color/gray_900"
+            android:textSize="@dimen/text_20"
+            app:layout_constraintBottom_toBottomOf="@+id/ivUserPhoto"
+            app:layout_constraintStart_toStartOf="@id/tvWelcome"
+            app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
+
+        <ImageView
+            android:id="@+id/ivArrow"
+            android:layout_width="@dimen/d_30"
+            android:layout_height="@dimen/d_30"
+            android:layout_marginStart="@dimen/d_10"
+            android:layout_marginTop="@dimen/d_15"
+            android:layout_marginEnd="@dimen/d_15"
+            android:src="@drawable/arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/tvWelcome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvWelcome"
+            tools:ignore="ContentDescription" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutExplore"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d_60"
+            android:padding="@dimen/d_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvUserName">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSelectedExplore"
+                android:layout_width="@dimen/d_6"
+                android:layout_height="@dimen/d_50"
+                android:src="@drawable/selected"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivExplore"
+                android:layout_width="@dimen/d_30"
+                android:layout_height="@dimen/d_30"
+                android:layout_marginStart="@dimen/d_40"
+                android:src="@drawable/explore"
+                android:tint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription,UseAppTint" />
+
+            <TextView
+                android:id="@+id/tvExplore"
+                style="@style/lato_normal_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/d_20"
+                android:text="@string/explore"
+                android:textColor="@color/gray_900"
+                android:textSize="@dimen/text_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivExplore"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutLiveChat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d_40"
+            android:padding="@dimen/d_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutExplore">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSelectedChat"
+                android:layout_width="@dimen/d_6"
+                android:layout_height="@dimen/d_50"
+                android:src="@drawable/selected"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivChat"
+                android:layout_width="@dimen/d_30"
+                android:layout_height="@dimen/d_30"
+                android:layout_marginStart="@dimen/d_40"
+                android:src="@drawable/live"
+                android:tint="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription,UseAppTint" />
+
+            <TextView
+                android:id="@+id/tvChat"
+                style="@style/lato_normal_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/d_20"
+                android:text="@string/live_chat"
+                android:textColor="@color/gray_900"
+                android:textSize="@dimen/text_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivChat"
+                app:layout_constraintTop_toTopOf="@id/ivChat"
+                tools:ignore="HardcodedText" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutGallery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d_40"
+            android:padding="@dimen/d_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutLiveChat">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSelectedGallery"
+                android:layout_width="@dimen/d_6"
+                android:layout_height="@dimen/d_50"
+                android:src="@drawable/selected"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivGallery"
+                android:layout_width="@dimen/d_30"
+                android:layout_height="@dimen/d_30"
+                android:layout_marginStart="@dimen/d_40"
+                android:src="@drawable/gallery"
+                android:tint="@color/gray_900"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription,UseAppTint" />
+
+            <TextView
+                android:id="@+id/tvGallery"
+                style="@style/lato_normal_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/d_20"
+                android:text="@string/gallery"
+                android:textColor="@color/gray_900"
+                android:textSize="@dimen/text_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivGallery"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutWishList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d_40"
+            android:padding="@dimen/d_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutGallery">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSelectedWishList"
+                android:layout_width="@dimen/d_6"
+                android:layout_height="@dimen/d_50"
+                android:src="@drawable/selected"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivWishList"
+                android:layout_width="@dimen/d_30"
+                android:layout_height="@dimen/d_30"
+                android:layout_marginStart="@dimen/d_40"
+                android:src="@drawable/wishlist"
+                android:tint="@color/gray_900"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription,UseAppTint" />
+
+            <TextView
+                android:id="@+id/tvWishList"
+                style="@style/lato_normal_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/d_20"
+                android:text="@string/wishlist"
+                android:textColor="@color/gray_900"
+                android:textSize="@dimen/text_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivWishList"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutEMagazine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d_40"
+            android:padding="@dimen/d_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutWishList">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSelectedMagazine"
+                android:layout_width="@dimen/d_6"
+                android:layout_height="@dimen/d_50"
+                android:src="@drawable/selected"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivMagazine"
+                android:layout_width="@dimen/d_30"
+                android:layout_height="@dimen/d_30"
+                android:layout_marginStart="@dimen/d_40"
+                android:src="@drawable/emagazine"
+                android:tint="@color/gray_900"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription,UseAppTint" />
+
+            <TextView
+                android:id="@+id/tvEMagazine"
+                style="@style/lato_normal_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/d_20"
+                android:text="@string/emagazine"
+                android:textColor="@color/gray_900"
+                android:textSize="@dimen/text_20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ivMagazine"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

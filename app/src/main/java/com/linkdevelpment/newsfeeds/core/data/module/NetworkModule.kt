@@ -1,6 +1,7 @@
-package com.linkdevelpment.newsfeeds.core.data
+package com.linkdevelpment.newsfeeds.core.data.module
 
 
+import com.linkdevelpment.newsfeeds.BuildConfig
 import com.linkdevelpment.newsfeeds.core.data.utils.RequestInterceptor
 import dagger.Module
 import dagger.Provides
@@ -23,7 +24,7 @@ object NetworkModule {
         return Retrofit.Builder().apply {
             addConverterFactory(GsonConverterFactory.create())
             client(okHttp)
-            baseUrl("")
+            baseUrl(BuildConfig.API_BASE_URL)
         }.build()
     }
 
@@ -37,6 +38,11 @@ object NetworkModule {
             addInterceptor(requestInterceptor)
             addInterceptor(loggingInterceptor())
         }.build()
+    }
+
+    @Provides
+    fun provideRequestInterceptor() : RequestInterceptor {
+        return RequestInterceptor()
     }
 
 

@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">NEWSFEEDS</string>
+
+    <string name="check_internet_connections">Check Internet Connections</string>
+    <string name="link_development">Link Development</string>
+    <string name="welcome">Welcome</string>
+    <string name="user_name">Tony Roshdy</string>
+    <string name="explore">Explore</string>
+    <string name="live_chat">Live Chat</string>
+    <string name="gallery">Gallery</string>
+    <string name="wishlist">Wish List</string>
+    <string name="emagazine">E-Magazine</string>
+    <string name="title">Title</string>
+    <string name="by">By Author</string>
+    <string name="date">April,3 2017</string>
+    <string name="empty">No Articles Found</string>
+    <string name="open_website">Open Website</string>
+
 </resources>

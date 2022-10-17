@@ -12,7 +12,8 @@
     <color name="blue_gray">#ECEFF1</color>
     <color name="gray_600">#757575</color>
 
-
+    <color name="shimmer_color">#A2CAC6C6</color>
+    <color name="Gray_Primary_200">#F8FAFC</color>
 
 
     <color name="gray_50">#FAFAFA</color>

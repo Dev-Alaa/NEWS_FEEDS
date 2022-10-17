@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
+import com.linkdevelpment.newsfeeds.core.presentation.view.ShimmerView
 import com.linkdevelpment.newsfeeds.core.presentation.view.ViewDialog
 import com.linkdevelpment.newsfeeds.databinding.FragmentBaseBinding
 
@@ -49,6 +51,22 @@ abstract class BaseFragmentBinding<VB : ViewBinding> : Fragment() {
     if (isDetached.not()) loadingDialog?.hideDialog()
   }
 
+
+  /**
+   * start Shimmer
+   */
+  fun startShimmer(shimmerView: ShimmerView) {
+    shimmerView.isVisible = true
+    shimmerView.startShimmerAnimation()
+  }
+
+  /**
+   * stop Shimmer
+   */
+  fun stopShimmer(shimmerView: ShimmerView) {
+    shimmerView.isVisible = false
+    shimmerView.stopShimmerAnimation()
+  }
 
 
   @Suppress("UNCHECKED_CAST")

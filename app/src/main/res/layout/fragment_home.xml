@@ -16,7 +16,40 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/rv_news" />
+    
+    <com.linkdevelpment.newsfeeds.core.presentation.view.ShimmerView
+        android:id="@+id/shimmerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/d_16"
+        android:layout_marginBottom="@dimen/d_10"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <include layout="@layout/rv_news_shimmer" />
+
+        <include layout="@layout/rv_news_shimmer" />
+
+        <include layout="@layout/rv_news_shimmer" />
+
+        <include layout="@layout/rv_news_shimmer" />
+
+        <include layout="@layout/rv_news_shimmer" />
+
+        <include layout="@layout/rv_news_shimmer" />
+        </LinearLayout>
+
+    </com.linkdevelpment.newsfeeds.core.presentation.view.ShimmerView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

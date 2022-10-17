@@ -82,7 +82,7 @@ class FragmentHome : BaseFragmentBinding<FragmentHomeBinding>() {
                 state.message,
                 state.isConnectionError
             )
-            is NewsSource1ListState.IsLoading -> handleLoading(state.isLoading)
+            is NewsSource1ListState.IsLoading -> handleShimmer(state.isLoading)
         }
 
     }
@@ -113,7 +113,7 @@ class FragmentHome : BaseFragmentBinding<FragmentHomeBinding>() {
                 state.message,
                 state.isConnectionError
             )
-            is NewsSource2ListState.IsLoading -> handleLoading(state.isLoading)
+            is NewsSource2ListState.IsLoading -> handleShimmer(state.isLoading)
         }
 
     }
@@ -149,6 +149,15 @@ class FragmentHome : BaseFragmentBinding<FragmentHomeBinding>() {
             showLoading()
         } else {
             dismissLoading()
+        }
+
+    }
+
+    private fun handleShimmer(isLoading: Boolean) {
+        if (isLoading) {
+            startShimmer(binding.shimmerView)
+        } else {
+            stopShimmer(binding.shimmerView)
         }
 
     }

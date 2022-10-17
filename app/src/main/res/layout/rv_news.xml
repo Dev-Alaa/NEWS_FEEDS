@@ -26,6 +26,7 @@
             android:layout_height="@dimen/d_200"
             android:src="@drawable/ic_articles_placeholder"
             android:textSize="@dimen/text_16"
+            android:scaleType="fitXY"
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

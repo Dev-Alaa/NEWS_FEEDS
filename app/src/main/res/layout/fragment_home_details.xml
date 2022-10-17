@@ -9,14 +9,14 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/layout_article"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="@dimen/d_10"
-        android:layout_marginTop="@dimen/d_30"
         android:layout_marginEnd="@dimen/d_10"
-        android:layout_marginBottom="@dimen/d_10"
+        android:layout_marginTop="@dimen/d_30"
         android:background="@color/blue_gray"
         app:cardCornerRadius="@dimen/d_5"
         app:cardElevation="@dimen/d_5"
+        app:layout_constraintBottom_toTopOf="@+id/btnOpenWebsite"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -26,11 +26,12 @@
 
             <ImageView
                 android:id="@+id/photo"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/d_200"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/d_250"
                 android:src="@drawable/ic_articles_placeholder"
                 android:textSize="@dimen/text_16"
                 android:textStyle="normal"
+                android:scaleType="fitXY"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -39,13 +40,16 @@
             <TextView
                 android:id="@+id/tvTitle"
                 style="@style/lato_normal_16"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/d_20"
                 android:layout_marginStart="@dimen/d_20"
+                android:layout_marginEnd="@dimen/d_20"
                 android:text="@string/title"
                 android:textColor="@color/gray_900"
                 android:textSize="@dimen/text_24"
                 android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/photo"
                 tools:ignore="HardcodedText" />
@@ -54,7 +58,7 @@
             <TextView
                 android:id="@+id/tvAuthor"
                 style="@style/lato_normal_16"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/d_12"
                 android:paddingBottom="@dimen/d_12"
@@ -62,20 +66,22 @@
                 android:textColor="@color/gray_600"
                 android:textSize="@dimen/text_14"
                 android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="@id/tvTitle"
                 app:layout_constraintStart_toStartOf="@id/tvTitle"
                 app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
             <TextView
                 android:id="@+id/tvDescription"
                 style="@style/lato_normal_16"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/d_12"
-                android:paddingBottom="@dimen/d_12"
+                android:paddingBottom="@dimen/d_40"
                 android:text="@string/by"
                 android:textColor="@color/gray_600"
                 android:textSize="@dimen/text_14"
                 android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="@id/tvTitle"
                 app:layout_constraintStart_toStartOf="@id/tvTitle"
                 app:layout_constraintTop_toBottomOf="@id/tvAuthor" />
 
@@ -85,7 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/d_12"
-                android:layout_marginEnd="@dimen/d_10"
+                android:layout_marginEnd="@dimen/d_20"
                 android:layout_marginBottom="@dimen/d_30"
                 android:text="@string/date"
                 android:textColor="@color/gray_100"
